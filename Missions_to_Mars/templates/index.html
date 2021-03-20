@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>web-scraping-challenge</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <div class=row>
+      <div class=col-md-6>
+        <h3>{{mars_dict['headline']}}</h3>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-12>
+        <p>{{mars_dict.teaser}}</p>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-6>
+        <h3>Featured Mars Image</h3>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-8>
+        <img src={{mars_dict.first_image}}>
+      </div>
+      <div class=col-md-4>
+        <div class=row>
+          <h3>Mars Facts</h3>
+        </div>
+        <div class=row>
+          <!-- <table class='table'> -->
+            {{mars_dict.mars_facts|safe}}
+          <!-- </table> -->
+        </div>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-12>
+        <h3 style="text-align:center">Mars Hemispheres</h3>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-6>
+        <div class=row>
+          <img src={{mars_dict.hemispheres[0].image}}>
+        </div>
+        <div class=row>
+          <h3>{{mars_dict.hemispheres[0].hemisphere}}</h3>
+        </div>
+      </div>
+      <div class=col-md-6>
+        <div class=row>
+          <img src={{mars_dict.hemispheres[1].image}}>
+        </div>
+        <div class=row>
+          <h3>{{mars_dict.hemispheres[1].hemisphere}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class=row>
+      <div class=col-md-6>
+        <div class=row>
+          <img src={{mars_dict.hemispheres[2].image}}>
+        </div>
+        <div class=row>
+          <h3>{{mars_dict.hemispheres[2].hemisphere}}</h3>
+        </div>
+      </div>
+      <div class=col-md-6>
+        <div class=row>
+          <img src={{mars_dict.hemispheres[3].image}}>
+        </div>
+        <div class=row>
+          <h3>{{mars_dict.hemispheres[3].hemisphere}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
